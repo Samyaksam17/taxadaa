@@ -14,7 +14,7 @@ require("dotenv").config();
 const connectionParams = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-};
+}
 
 // connect to database
 mongoose
@@ -37,7 +37,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Express Session
 app.use(
   session({
-    secret: "secret",
+    secret: "database",
     saveUninitialized: true,
     resave: true,
   })
