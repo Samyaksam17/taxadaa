@@ -66,6 +66,3 @@ module.exports.createtask = function (newtask, callback) {
   Task.create(newtask, callback);
 };
 
-module.exports.find = function (query, callback) {
-  Task.findOne(query,callback);
-};

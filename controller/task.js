@@ -89,9 +89,7 @@ const create = (req, res, next) => {
 
     // Validate due date
     if (!validateDueDate(isoDueDate, isoPeriod, period_type)) {
-      return res
-        .status(400)
-        .json({ error: "Due date must be after the end of the period" });
+      return res.json({ error: "Due date must be after the end of the period" });
     }
 
     let createObj = {
@@ -120,11 +118,9 @@ const list =  (req, res) => {
   if (searchText) {
     query.$or = [{ name: { $regex: searchText, $options: 'i' } }, { description: { $regex: searchText, $options: 'i' } }];
   }
-  const tasks = TaskList.find(query, callback)
+  const tasks = TaskList.find(query)
   .populate('taskList', 'name')
   .select('name description period period_type due_date taskList');
-
-  
 
   const count = Task.countDocuments(query);
   res.json({ tasks, count });
