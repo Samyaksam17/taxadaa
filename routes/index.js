@@ -5,9 +5,9 @@ router.get('/ping', (req, res)=>{
     res.json({response: "pong", details: {project_name: "TaxAdda", version: "0.0.1", tag: "demo", description: "Backend assesment ..." } });
 });
 
-// if no url matched
+// if no url matchedd
 router.get('/*', (req, res) => {
-    return res.json({status: false, message: "wrong url..."});
+    return res.json({status: false, message: "wrong url...."});
 });
 
 

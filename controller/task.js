@@ -82,7 +82,7 @@ const create = (req, res, next) => {
         period = item.b + " " + y;
       }
     });
-    // console.log("period==>", period);
+    console.log("period==>", period);
 
    
     const isoPeriod = convertToISODate(`01 ${period}`);

@@ -58,8 +58,8 @@ const taskSchema = new mongoose.Schema({
 
 taskSchema.plugin(uniqueValidator);
 
-// Creating Task model
-const Task = mongoose.model("task", taskSchema);
+// Creating Task modelll
+const Task = mongoose.model("task", taskSchema)
 
 
 module.exports.createtask = function (newtask, callback) {
